@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Launch a rocket!</title>
+<style type="text/css">
+#space {
+	width: 100vw;
+	text-align: center;
+}
+#rocket {
+	width: inherit;
+	position: absolute;
+	bottom: 0px;
+}
+</style>
+</head>
+
+<body>
+<button id="trigger">Launch the Rocket!</button>
+<div id="space">
+  <div id="rocket"><img src="rocket.png" height="120" alt="space rocket"/></div>
+</div>
+<script type="text/javascript">
+	
+	var rocket = document.getElementById("rocket"); 
+	var trigger = document.getElementById("trigger"); 
+	
+	trigger.addEventListener('click', launchRocket);
+	
+	function launchRocket() {
+		
+	  var elem = document.getElementById("rocket");   
+	  var pos = 0;
+	  var id = setInterval(frame, 5);
+	  function frame() {
+		if (pos == 350) {
+		  clearInterval(id);
+		} else {
+		  pos++; 
+		  elem.style.bottom = pos + 'px'; 
+		  elem.style.mid = pos + 'px'; 
+		}
+	  }
+	}
+	
+</script>
+</body>
+</html>
