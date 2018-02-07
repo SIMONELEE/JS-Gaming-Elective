@@ -6,7 +6,8 @@ var questions = [
 		['How many moons does Venus have?', 0]	
 	];
 
-//var message = document.getElementById('message');
+var message = document.getElementById('message');
+var score = 0;
 
 
 function userInput(){
@@ -17,18 +18,24 @@ function userInput(){
 	//Saturn answer will be: [1][1] because it's the second in the overall array and then it's the second value inside the array itself
 	let number1 = parseInt(prompt(questions[0][0], '')); //prompt is how to get user input. Reveser from the alertbox, that is a window message from the code
 	
+	
+	//QUESTION 1 (EARTH)
 	if(number1 === questions[0][1]){
 		 alert('Correct!');
+		score ++;
 	}
 	else 
 	{
-		alert('Sorry, Earth has only' + questions[0][1] + ' moon.');
+		alert('Sorry, Earth has only ' + questions[0][1] + ' moon.');
 	}
 
+	
+	//QUESTION 2 (SATURN)
 	let number2 = parseInt(prompt(questions[1][0], ''));
 	
 	if(number2 === questions[1][1]){
 	 	alert('Correct!');
+		score ++;
 	}
 	else 
 	{
@@ -36,10 +43,12 @@ function userInput(){
 	}
 	
 
+	//QUESTION 3 (VENUS)
 	let number3 = parseInt(prompt(questions[2][0], ''));
 	
 	if(number3 === questions[2][1]){
 	 	alert('Correct!');
+		score ++;
 	}
 	else 
 	{
@@ -49,6 +58,11 @@ function userInput(){
 
 
 userInput();
+
+
+
+message.innerHTML = 'You got a score of: ' + score +  ' out of: ' + questions.length + '.';
+
 
 	
 	/****************************
