@@ -71,9 +71,11 @@ console.log(playerScore);
 function listPlayers(){
 	'use strict';
 	for(var i=0; i<playerScore.length; i++){
-		output.innerHTML += playerScore[i] + '<br>'
+		output.innerHTML += playerScore[i] + '<br>';
 		
 	}
 }
 
 trigger.addEventListener('click', listPlayers);
+
+
