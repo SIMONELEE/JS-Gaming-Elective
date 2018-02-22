@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Launch a Rocket (ECMA class syntax)</title>
+<script type="text/javascript">
+	
+	class Rocket {
+		
+		// The constructor method is a special method for creating and initializing an object created with a class. 
+		constructor(description, engines){
+			this.description = description; //whatever comes in as desciprtion gets this desciprtion
+			this.engines = engines;
+			this.fuel = 0; //calculate as gallons, input is litre
+		}
+		
+		
+		// class method
+		describeYourself(){
+			console.log('I am a ' + this.description + ' with ' + this.engines + ' engines.');
+		}
+		
+		//a getter & getter are most commonly in pairs.
+		//we use to get and then set he get to tank and it returns the string (in console)
+		//MDN:"binds an object's property to a function that will be called when the property is looked up." binds fuel to tank (function) which is called in the console
+		get tank (){
+			return 'Tank is filled with ' + this.fuel + ' gallons.'
+		}
+		
+		//a setter
+		//MSD: it binds an object's property to a function to be called when there is an attempt to set the property 
+		//a setter if it's not only about assigning, but also doing something while assigning.
+		set tank (liter){
+			//liter to gallion conversion 
+			var gal = liter * 0.264172;
+			this.fuel = gal;
+		}
+		
+		//static class method
+		static distressSignal (){
+			console.log('Houston, we have a problem!');
+		}
+	} // class end
+	
+	//inheritance: creating a sub-class extending Rocket
+	class Saturn extends Rocket {
+		
+		constructor(){
+			//refering to the super class constructor "Rocket"
+			super("Saturn V", 4);
+			this.enginetype = 'F-1'; //this is the extra for the inherted class. Like in C#, we need the child-class to have additional class properties, otherwise it's just the same as the parent class. 
+		}
+		
+		//override the method from the parent Rocket class method 
+		describeYourself(){
+			super.describeYourself(); //keeping the functionality from the superclass method. By this, we keep the original descripbe yourself + the overriden
+			console.log('Enginetype: ' + this.enginetype);
+		}
+		
+		//additional class method 
+		addLoad(load){
+			console.log('Load: ' + load + '.');
+		}
+		
+	} //sub-class end 
+	
+	
+	
+	//instantiate an object
+	var awesomeRocket = new Rocket("Spaceship", 5);
+	awesomeRocket.describeYourself();
+	console.log(awesomeRocket.tank); //getter
+	awesomeRocket.tank = 20000; //setter
+	console.log(awesomeRocket.tank);
+	Rocket.distressSignal(); //call to the staric method
+	
+	//instantiate an object from the sub-class 
+	var mySaturn = new Saturn();
+	mySaturn.describeYourself(); //the overridden descripteYourself method 
+	mySaturn.addLoad('Lunar Roving Vehicle');
+	
+	
+</script>
+</head>
+
+<body>
+</body>
+</html>
