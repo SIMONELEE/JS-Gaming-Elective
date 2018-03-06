@@ -1,0 +1,17 @@
+/* CSS Document */
+body {
+	background-color: #DBDBDB;
+}
+.button {
+	width: 100px;
+	border: 1px solid black;
+	padding: 10px;
+	margin: 5px;
+	cursor: pointer;
+	text-align: center;
+}
+
+.button:hover {
+	background-color: #9B9B9B;
+}
+
