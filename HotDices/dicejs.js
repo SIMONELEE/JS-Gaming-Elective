@@ -49,7 +49,7 @@ if(localStorage.getItem('comScore') === null){
 //var playerScore = localStorage.getItem('playScore');
 //localStorage.setItem('playScore', playerScore);
 
-/*I TRIED TO IMPLEMENT THE LOCAL STORAGE, BUT I HAVE NO IDEA HOW IT SHOULD WORK*/
+/******I TRIED TO IMPLEMENT THE LOCAL STORAGE, BUT I HAVE NO IDEA HOW IT SHOULD WORK******/
 
 /*GLOBAL VARIABLES*/
 var reset = document.getElementById('reset');
