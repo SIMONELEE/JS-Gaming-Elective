@@ -1,7 +1,44 @@
 /*GLOBAL VARIABLES*/
-localStorage.setItem('player', prompt('Hello player. Please enter your name: ', ''));
-var playerName = localStorage.getItem('player');
-document.getElementById('player-name').innerHTML = playerName + ':';
+//localStorage.setItem('player', prompt('Hello player. Please enter your name: ', ''));
+//var playerName = localStorage.getItem('player');
+//document.getElementById('player-name').innerHTML = playerName + ':';
+
+
+if(localStorage.getItem('player') === null){
+	localStorage.setItem('player', prompt('Hello player. Please enter your name: ', '')); 
+	var playerName = localStorage.getItem('player');
+	document.getElementById('player-name').innerHTML = playerName + ':';
+}
+	else {
+	var playerName = localStorage.getItem('player');
+	document.getElementById('player-name').innerHTML = playerName + ':';
+}
+
+
+
+if(localStorage.getItem('playScore') === null){
+	localStorage.setItem('playScore', 0); 
+	playerScore = parseInt(localStorage.getItem('playScore'));
+	document.getElementById('player-score').innerHTML = playerScore;
+}
+	else {
+	//var computerScore = localStorage.getItem('comScore');
+	playerScore = parseInt(localStorage.getItem('playScore'));
+	document.getElementById('player-score').innerHTML = playerScore;
+}
+
+
+
+if(localStorage.getItem('comScore') === null){
+	localStorage.setItem('comScore', 0); 
+	computerScore = parseInt(localStorage.getItem('comScore'));
+	document.getElementById('computer-score').innerHTML = computerScore;
+}
+	else {
+	//var computerScore = localStorage.getItem('comScore');
+	computerScore = parseInt(localStorage.getItem('comScore'));
+	document.getElementById('computer-score').innerHTML = computerScore;
+}
 
 //var computerScore = localStorage.getItem('comScore');
 //localStorage.setItem('comScore', computerScore);
@@ -15,8 +52,8 @@ var reset = document.getElementById('reset');
 var playAgain = document.getElementById('play-again');
 var compareResult = document.getElementById('result');
 
-var computerScore = 0;
-var playerScore = 0;
+var computerScore;
+var playerScore;
 
 var playerResult, result;
 
@@ -85,13 +122,17 @@ function Compare(){
 		//console.log("You loose!");
 		computerScore++;
 		compareResult.innerHTML = "You loose!";
+		localStorage.setItem('comScore', computerScore);
 		document.getElementById('computer-score').innerHTML = computerScore; 
+		
 	}
 	else if (result<playerResult){
 		//console.log("You win!");
 		playerScore++;
 		compareResult.innerHTML = "You win!";
+		localStorage.setItem('playScore', playerScore);
 		document.getElementById('player-score').innerHTML = playerScore; 
+		
 	}
 }
 
@@ -164,6 +205,8 @@ Playing.rollDice();
 Playing.calculate();
 
 Compare();
+
+document.getElementById('computer-score').innerHTML = computerScore;
 
 //console.log(playerName);
 
