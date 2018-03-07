@@ -1,9 +1,6 @@
-/*GLOBAL VARIABLES*/
-//localStorage.setItem('player', prompt('Hello player. Please enter your name: ', ''));
-//var playerName = localStorage.getItem('player');
-//document.getElementById('player-name').innerHTML = playerName + ':';
+/*LOCAL STORAGE FOR THE PLAYER NAME, PLAYER SCORE AND COMPUTER SCORE*/
 
-
+//LOCAL STORAGE: PLAYER NAME
 if(localStorage.getItem('player') === null){
 	localStorage.setItem('player', prompt('Hello player. Please enter your name: ', '')); 
 	var playerName = localStorage.getItem('player');
@@ -15,7 +12,7 @@ if(localStorage.getItem('player') === null){
 }
 
 
-
+//LOCAL STORAGE: PLAYER SCORE
 if(localStorage.getItem('playScore') === null){
 	localStorage.setItem('playScore', 0); 
 	playerScore = parseInt(localStorage.getItem('playScore'));
@@ -28,7 +25,7 @@ if(localStorage.getItem('playScore') === null){
 }
 
 
-
+//LOCAL STORAGE: COMPUTER SCORE
 if(localStorage.getItem('comScore') === null){
 	localStorage.setItem('comScore', 0); 
 	computerScore = parseInt(localStorage.getItem('comScore'));
@@ -40,6 +37,12 @@ if(localStorage.getItem('comScore') === null){
 	document.getElementById('computer-score').innerHTML = computerScore;
 }
 
+
+//localStorage.setItem('player', prompt('Hello player. Please enter your name: ', ''));
+//var playerName = localStorage.getItem('player');
+//document.getElementById('player-name').innerHTML = playerName + ':';
+
+
 //var computerScore = localStorage.getItem('comScore');
 //localStorage.setItem('comScore', computerScore);
 
@@ -48,6 +51,7 @@ if(localStorage.getItem('comScore') === null){
 
 /*I TRIED TO IMPLEMENT THE LOCAL STORAGE, BUT I HAVE NO IDEA HOW IT SHOULD WORK*/
 
+/*GLOBAL VARIABLES*/
 var reset = document.getElementById('reset');
 var playAgain = document.getElementById('play-again');
 var compareResult = document.getElementById('result');
@@ -158,8 +162,8 @@ function resetGame(){
 }
 
 
-//TESTING LOCAL STORAGE
-/*
+/*TESTING LOCAL STORAGE
+
 function storageAvailable(type) {
 	'use strict';
     try {
@@ -206,7 +210,7 @@ Playing.calculate();
 
 Compare();
 
-document.getElementById('computer-score').innerHTML = computerScore;
+//document.getElementById('computer-score').innerHTML = computerScore;
 
 //console.log(playerName);
 
