@@ -56,9 +56,7 @@ var reset = document.getElementById('reset');
 var playAgain = document.getElementById('play-again');
 var compareResult = document.getElementById('result');
 
-var computerScore;
-var playerScore;
-
+var computerScore, playerScore;
 var playerResult, result;
 
 
