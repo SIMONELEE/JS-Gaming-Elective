@@ -1,4 +1,4 @@
-/*LOCAL STORAGE FOR THE PLAYER NAME, PLAYER SCORE AND COMPUTER SCORE*/
+ /*LOCAL STORAGE FOR THE PLAYER NAME, PLAYER SCORE AND COMPUTER SCORE*/
 
 //LOCAL STORAGE: PLAYER NAME
 if(localStorage.getItem('player') === null){
@@ -207,8 +207,6 @@ Playing.rollDice();
 Playing.calculate();
 
 Compare();
-
-//document.getElementById('computer-score').innerHTML = computerScore;
 
 //console.log(playerName);
 
